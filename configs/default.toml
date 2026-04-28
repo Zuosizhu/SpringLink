@@ -1,0 +1,26 @@
+version = 1
+
+[general]
+has_public_ip = false
+public_ip = ""
+auto_detect_ip = true
+frps_addr = "relay.example.com"
+frps_port = 7000
+frps_token = ""
+binary_path = ""
+
+[wstunnel]
+public_listen_port = 443
+
+[[services]]
+name = "Minecraft Java"
+protocol = "tcp"
+enabled = true
+local_port = 25565
+encapsulation = "raw"
+transport = "direct"
+remote_port = 25565
+wstunnel_local_port = 0
+
+[client]
+server_addr = ""
